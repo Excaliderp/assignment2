@@ -1,0 +1,26 @@
+
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: #5A464C;
+  height: 100%;
+  margin: 0;
+}
+
+header,
+footer {
+  background-color: #53131E;
+  padding: 48px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: #B5D6B2;
+}
+
+main {
+  height: 70%;
+}

@@ -1,0 +1,19 @@
+different words in an array
+
+find different values in a string (or array)
+
+different lines in prompt (\n)
+
+different functions for different parts of the game. can take different inputs and give diferent results
+
+function nameOfFunction() {
+  return "Hi!"
+  //code to excecute
+}
+let rescuer = rescuer [Math.floor(Math.random() * rescuers.length)];
+
+use function in loops.
+one function for correct guess, one function for wrong guess
+
+"forEach" itirates functions
+
