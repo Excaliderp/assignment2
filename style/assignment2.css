@@ -24,3 +24,14 @@ h2 {
 main {
   height: 70%;
 }
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  color: #B5D6B2;
+  font-size: 100px;
+}

@@ -1,73 +1,46 @@
-/*
 
+const WORDSARRAY = ["cats", "dogs", "rats", "horse", "whale"];
+const CURRENTWORD = WORDSARRAY[Math.floor(Math.random() * WORDSARRAY.length)];
+let wrongGuesses = 10;
+let message = "\n";
 
+console.log(CURRENTWORD);
 
-
-
-
-
-*/
-
-
-
-
-let wordsArray = ["cats", "dogs", "rats", "horse", "whale"];
-let currentWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
-let remainingLetters = currentWord.length;
 let answerArray = [];
-let wrongGuess = [0];
-
-
-
-for (let i = 0; i < currentWord.length; i++) {
+for (let i = 0; i < CURRENTWORD.length; i++) {
   answerArray[i] = "_";
 }
 
+let remainingLetters = CURRENTWORD.length;
 
-while (remainingLetters > 0  || wrongGuess < 6) {
-  alert(answerArray.join(" "));
-  let guess = prompt("Give me a letter.");
-  if (guess === null) {
+while (remainingLetters > 0 && wrongGuesses > 0) {
+  let userInput = prompt(message + "\n" + answerArray.join(" ") + "\nGuesses left: " + wrongGuesses + "\nGive me a letter.");
+
+  if (userInput === null) {
     break;
-  } else if (guess.length !== 1) {
-    alert("Please, one letter at a time.");
-  } else if {
-    for(let j = 0; j <currentWord.length; j++) {
-    if (currentWord[j] === guess) {
-      answerArray[j] = guess;
-      remainingLetters--;
+  } else if (userInput.length !== 1) {
+    message = "One letter please";
+  } else {
+    for (let j = 0; j < CURRENTWORD.length; j++) {
+      if (CURRENTWORD[j] === userInput) {
+        answerArray[j] = userInput;
+        remainingLetters--;
+        message = "You said " + userInput.toLocaleUpperCase() + " . It's correct!\n";
+        wrongGuesses++;
+        break;
+      } else {
+        message = "You said " + userInput.toLocaleUpperCase() + ". It's wrong!\n";
+      }
     }
   }
+  wrongGuesses--;
+}
+
+
+if (remainingLetters === 0) {
+  alert("Winner! The word was " + CURRENTWORD);
+} else if (wrongGuesses <= 0) {
+  alert("You lost! The word was " + CURRENTWORD);
 } else {
-  if (currentWord[j] !== guess) {
-    wrongGuess++;
-  }
+  alert("You canceled. Refresh the page to try again!");
 }
-}
-
-alert(answerArray.join(" "));
-alert("Good job! the answer was " + currentWord);
-
-console.log(currentWord);
-console.log(answerArray);
-console.log[remainingLetters];
-console.log[wrongGuess];
-
-// alert(answerArray.join(" "));     använd funktionen men inte alert i prompt
-
-/*
-while loop better for when you need apecific times of loops, for example guessing
-(infinite easier)
-
-for loop better for when you don't know how many times need to loop, using [i]
-
-winner = false. 
-if winner = ArrayWord.lentgh = true
-
-if winner = true > you win the game
-
-loser = 0
-if loser = word.length > lose the game
-
-do while
-*/
