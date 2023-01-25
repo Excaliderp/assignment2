@@ -3,8 +3,14 @@ html {
   height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #5A464C;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   margin: 0;
 }
@@ -14,6 +20,12 @@ footer {
   background-color: #53131E;
   padding: 48px;
   text-align: center;
+  width: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }
 
 h1,
